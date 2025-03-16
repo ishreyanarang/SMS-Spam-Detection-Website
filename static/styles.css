@@ -1,0 +1,251 @@
+ /* General Body Styling with Background Image */
+ body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: url('/static/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Overlay Effect for Text Readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    z-index: 0;
+}
+
+/* Login Container Styling */
+.login-container {
+    position: relative;
+    background: #ffffff;
+    padding: 30px 60px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    color: #333;
+    z-index: 1;
+
+       background: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px 60px;
+}
+
+.login-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px 15px ;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-container input:focus {
+    border-color: #2575fc;
+    box-shadow: 0px 0px 5px rgba(37, 117, 252, 0.5);
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px 15px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+    background: #1e5ebd;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+    }
+
+    .login-container h1 {
+        font-size: 24px;
+    }
+} 
+
+.index-container {
+    position: relative;
+    background: #ffffff;
+    padding: 30px 60px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    color: #333;
+    z-index: 1;
+}
+.index-container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.index-container button {
+    width: 100%;
+    padding: 12px 15px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+
+/* Animation for Spam */
+@keyframes spamShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.spam-animation {
+    animation: spamShake 0.5s ease-in-out;
+    color: red;
+    font-weight: bold;
+}
+
+/* Animation for Ham */
+@keyframes hamGlow {
+    0% { box-shadow: 0 0 5px green; }
+    50% { box-shadow: 0 0 15px green; }
+    100% { box-shadow: 0 0 5px green; }
+}
+
+.ham-animation {
+    animation: hamGlow 1s ease-in-out;
+    color: green;
+    font-weight: bold;
+}
+
+
+/* General Styling for Result */
+#result {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 15px;
+    display: none; /* Hidden by default */
+}
+
+/* Animation for Spam (Blinking Red Light) */
+@keyframes blinkRed {
+    0%, 100% { background-color: rgba(255, 0, 0, 0.9); color: #fff; }
+    50% { background-color: rgba(255, 0, 0, 0.4); color: #fff; }
+}
+
+.spam-blink {
+    display: block;
+    animation: blinkRed 1s infinite;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+    border: 5px solid red;
+}
+
+/* Animation for Ham (Blinking Green Light) */
+@keyframes blinkGreen {
+    0%, 100% { background-color: rgba(0, 255, 0, 0.9); color: #fff; }
+    50% { background-color: rgba(0, 255, 0, 0.4); color: #fff; }
+}
+
+.ham-blink {
+    display: block;
+    animation: blinkGreen 1s infinite;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+    border: 5px solid green;
+}
+
+/* Full-Screen Effect */
+#result p {
+    margin: 0;
+    font-size: 72px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Styling for Fixed Message Input Box */
+textarea {
+    width: 300px; /* Set a fixed width */
+    height: 120px; /* Set a fixed height */
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, sans-serif;
+    resize: none; /* Disable manual resizing */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect for interactivity */
+textarea:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+}
+/* Specific Background for index.html */
+.index-page {
+    background: url('../static/Screenshot\ 2024-12-14\ 162618.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+
+/* Specific Box Opacity for index.html */
+.transparent-box {
+    background: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px 60px;
+}
+
+
